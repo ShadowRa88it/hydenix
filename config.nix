@@ -16,11 +16,11 @@
 
   # List of drivers to install in ./hosts/nixos/drivers.nix
   drivers = [
-    #"amdgpu"
+    "amdgpu"
     "intel"
-    # "nvidia"
-    # "amdcpu"
-    # "intel-old"
+    "nvidia"
+    "amdcpu"
+    "intel-old"
   ];
 
   /*
@@ -72,8 +72,8 @@
       "Decay Green"
       # "Edge Runner"
       # "Frosted Glass"
-      "Graphite Mono"
-      "Gruvbox Retro"
+      #"Graphite Mono"
+      #"Gruvbox Retro"
       # "Material Sakura"
       # "Nordic Blue"
       # "Rose Pine"
