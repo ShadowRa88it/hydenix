@@ -32,7 +32,7 @@
       #nixosConfigurations.${hydenixConfig.userConfig.host} = hydenixConfig.nixosConfiguration;
       nixosConfigurations = (
         import ./hosts {
-          inherit inputs hydenix;
+          inherit inputs system nixpkgs hydenix;
         }
       );
 

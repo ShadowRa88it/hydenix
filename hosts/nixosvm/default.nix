@@ -1,8 +1,7 @@
-{ inputs, hydenix, system, ...}:
+{ inputs, system, nixpkgs, hydenix, ...}:
 let
-  system = "x86_64-linux";
   hydenixConfig = hydenix.lib.mkConfig {
-    userConfig = imports [../baseConfig.nix ./config.nix];
+    userConfig = import ../baseConfig.nix ++ import ./config.nix;
     # inputs without nixpkgs to prevent override
     extraInputs = removeAttrs inputs [ "nixpkgs" ];
   };

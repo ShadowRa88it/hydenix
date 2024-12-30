@@ -1,8 +1,8 @@
-{ inputs, hydenix, system, ...}:
+{ inputs, system, nixpkgs, hydenix, ...}:
 {
   nixosvm = (
     import ./nixosvm {
-      inherit inputs hydenix system;
+      inherit inputs system nixpkgs hydenix;
     }
   );
 }
