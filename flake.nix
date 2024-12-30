@@ -29,7 +29,12 @@
     in
     {
 
-      nixosConfigurations.${hydenixConfig.userConfig.host} = hydenixConfig.nixosConfiguration;
+      #nixosConfigurations.${hydenixConfig.userConfig.host} = hydenixConfig.nixosConfiguration;
+      nixosConfigurations = {
+        import ./hosts {
+          inherit inputs;
+        }
+      }
 
       packages.${system} = {
         # Packages below load your config in ./config.nix

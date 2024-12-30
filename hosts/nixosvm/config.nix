@@ -1,26 +1,26 @@
 {
-  username = "avb";
-  gitUser = "ShadowRa88it";
-  gitEmail = "shadowra88it@gmail.com";
+  # username = "avb";
+  # gitUser = "ShadowRa88it";
+  # gitEmail = "shadowra88it@gmail.com";
   host = "nixosvm";
   /*
     Default password is required for sudo support in systems
     !REMEMBER TO USE passwd TO CHANGE THE PASSWORD!
   */
-  defaultPassword = "hydenix";
-  timezone = "Pacific/Honolulu";
-  locale = "en_US.UTF-8";
+  # defaultPassword = "hydenix";
+  # timezone = "Pacific/Honolulu";
+  # locale = "en_US.UTF-8";
 
   # hardware config - sudo nixos-generate-config --show-hardware-config > hardware-configuration.nix
-  hardwareConfig = (toString ./hosts/+"${host}"+/hardware-configuration.nix);
+  hardwareConfig = (toString ./hardware-configuration.nix);
 
   # List of drivers to install in ./hosts/nixos/drivers.nix
   drivers = [
     "amdgpu"
-    "intel"
+    #"intel"
     "nvidia"
     "amdcpu"
-    "intel-old"
+    #"intel-old"
   ];
 
   /*
@@ -39,13 +39,13 @@
       }
   */
   # List of nix modules to import in ./hosts/nixos/default.nix
-  nixModules = [
-    #(toString ./module.nix)
-    # in my-module.nix you can reference this userConfig
-    # ({ userConfig, pkgs, ... }: {
-    #   environment.systemPackages = [ pkgs.git ];
-    # })
-  ];
+  # nixModules = [
+  #   #(toString ./module.nix)
+  #   # in my-module.nix you can reference this userConfig
+  #   # ({ userConfig, pkgs, ... }: {
+  #   #   environment.systemPackages = [ pkgs.git ];
+  #   # })
+  # ];
   # List of nix modules to import in ./lib/mkConfig.nix
   homeModules = [
     #(toString ./module.nix)
@@ -124,13 +124,13 @@
     };
   };
 
-  vm = {
-    # 4 GB minimum
-    memorySize = 4096;
-    # 2 cores minimum
-    cores = 2;
-    # TODO: review, it also seems to matter which vm is run
-    # 30GB minimum for one theme - 50GB for multiple themes - more for development and testing
-    diskSize = 20000;
-  };
+  # vm = {
+  #   # 4 GB minimum
+  #   memorySize = 4096;
+  #   # 2 cores minimum
+  #   cores = 2;
+  #   # TODO: review, it also seems to matter which vm is run
+  #   # 30GB minimum for one theme - 50GB for multiple themes - more for development and testing
+  #   diskSize = 20000;
+  # };
 }
