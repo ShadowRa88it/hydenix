@@ -2,6 +2,7 @@
   username = "avb";
   gitUser = "ShadowRa88it";
   gitEmail = "shadowra88it@gmail.com";
+  host = builtins.getEnv "HOSTNAME";
 #   host = "nixosvm";
   /*
     Default password is required for sudo support in systems

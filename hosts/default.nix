@@ -1,7 +1,8 @@
 { inputs, system, nixpkgs, hydenix, ...}:
 let
+  hostname = builtins.getEnv "HOSTNAME";
   hydenixConfig = hydenix.lib.mkConfig {
-    userConfig = import ./baseConfig.nix // import ./nixosvm/config.nix;
+    userConfig = import ./baseConfig.nix // import ./${hostname}/config.nix;
     # inputs without nixpkgs to prevent override
     extraInputs = removeAttrs inputs [ "nixpkgs" ];
   };
