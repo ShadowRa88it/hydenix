@@ -15,6 +15,7 @@
 
   outputs =
     {
+      self,
       hydenix,
       nixpkgs,
       ...
@@ -35,6 +36,12 @@
         import ./hosts {
           inherit inputs system nixpkgs hydenix;
         }
-      );      
+      );   
+
+      packages = (
+        import ./hosts/hydePackages.nix {
+          inherit inputs system;
+        }
+      );   
     };
 }
