@@ -1,11 +1,8 @@
-{ inputs, ...}:
-let
-  system = "x86_64-linux";
-in
+{ inputs, hydenix, ...}:
 {
-  nixosvm = {
+  nixosvm = (
     import ./nixosvm {
-      inherit inputs system;
+      inherit inputs system hydenix;
     }
-  };
+  );
 }
