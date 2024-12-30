@@ -12,7 +12,7 @@
   locale = "en_US.UTF-8";
 
   # hardware config - sudo nixos-generate-config --show-hardware-config > hardware-configuration.nix
-  hardwareConfig = (toString ./hardware-configuration.nix);
+  hardwareConfig = (toString ./hosts/+"${host}"+/hardware-configuration.nix);
 
   # List of drivers to install in ./hosts/nixos/drivers.nix
   drivers = [
