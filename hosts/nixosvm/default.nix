@@ -1,4 +1,4 @@
-{ inputs, system, hydenix, ...}:
+{ inputs, hydenix, system, ...}:
 let
   system = "x86_64-linux";
   hydenixConfig = hydenix.lib.mkConfig {
