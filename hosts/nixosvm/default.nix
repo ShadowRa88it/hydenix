@@ -1,4 +1,4 @@
-{ inputs, nixpkgs, hydenix, ...}:
+{ inputs, system, nixpkgs, hydenix, ...}:
 let
   hydenixConfig = hydenix.lib.mkConfig {
     userConfig = import ../baseConfig.nix // import ./config.nix;
@@ -7,6 +7,7 @@ let
   };
 in
 {
+  foo = hydenixConfig.nixosConfiguration;
   # {} = hydenixConfig.nixosConfiguration;
   #self.nixosConfigurations.nixosvm = hydenixConfig.nixosConfiguration;
   # Overlay 1: Use `self` and `super` to express
