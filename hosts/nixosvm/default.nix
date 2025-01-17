@@ -7,7 +7,9 @@ let
   };
 in
 {
-  foo = hydenixConfig.nixosConfiguration;
+  nixosConfigurations = {
+    "nixosvm" = hydenixConfig.nixosConfiguration;
+  };
   # {} = hydenixConfig.nixosConfiguration;
   #self.nixosConfigurations.nixosvm = hydenixConfig.nixosConfiguration;
   # Overlay 1: Use `self` and `super` to express
