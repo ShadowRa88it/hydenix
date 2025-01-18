@@ -39,7 +39,7 @@
 
     in
     {
-      debugAttrs = {inherit nixosSystems nixosSystemNames nixosSystemValues;};
+      # debugAttrs = {inherit nixosSystems nixosSystemNames nixosSystemValues;};
       nixosConfigurations =
         lib.attrsets.mergeAttrsList (map (it: it.nixosConfigurations or {}) nixosSystemValues);
       #nixosConfigurations.${hydenixConfig.userConfig.host} = hydenixConfig.nixosConfiguration;

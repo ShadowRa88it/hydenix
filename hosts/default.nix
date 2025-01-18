@@ -1,12 +1,18 @@
-{ inputs, system, nixpkgs, hydenix, ...}:
+{ inputs, system, nixpkgs, hydenix, ...} @args:
 let
   inherit (inputs.nixpkgs) lib;
-  nixosvmSystems = {
-    nixosvm = (
-      import ./nixosvm {
+
+  args = {
         inherit inputs system nixpkgs hydenix;
-      }
+      };
+  nixosvmSystems = {
+    xps = (
+      import ./xps (args)
     );
+    nixosvm = (
+      import ./nixosvm (args)
+    );
+    
   };
 
   allSystems = nixosvmSystems;

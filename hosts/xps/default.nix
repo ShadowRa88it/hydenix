@@ -1,4 +1,4 @@
-{ inputs, system, nixpkgs, hydenix, ...} @args:
+{ inputs, system, nixpkgs, hydenix, ...}:
 let
   hydenixConfig = hydenix.lib.mkConfig {
     userConfig = import ../baseConfig.nix // import ./config.nix;
@@ -8,7 +8,7 @@ let
 in
 {
   nixosConfigurations = {
-    "nixosvm" = hydenixConfig.nixosConfiguration;
+    "xps" = hydenixConfig.nixosConfiguration;
   };
   # {} = hydenixConfig.nixosConfiguration;
   #self.nixosConfigurations.nixosvm = hydenixConfig.nixosConfiguration;
