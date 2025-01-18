@@ -2,7 +2,6 @@
   # username = "avb";
   # gitUser = "ShadowRa88it";
   # gitEmail = "shadowra88it@gmail.com";
-  host = "nixosvm";
   /*
     Default password is required for sudo support in systems
     !REMEMBER TO USE passwd TO CHANGE THE PASSWORD!
@@ -16,11 +15,11 @@
 
   # List of drivers to install in ./hosts/nixos/drivers.nix
   drivers = [
-    "amdgpu"
-    #"intel"
-    "nvidia"
-    "amdcpu"
-    #"intel-old"
+    #"amdgpu"
+    "intel"
+    #"nvidia"
+    #"amdcpu"
+    "intel-old"
   ];
 
   /*
